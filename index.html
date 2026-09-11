@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventify - Event Planning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>Eventify</h1>
+
+    <button id="menuButton" onclick="toggleMenu()">☰</button>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#planner">Plan Event</a>
+        <a href="#budget">Budget</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button id="darkModeButton" onclick="toggleDarkMode()">
+        🌙 Dark Mode
+    </button>
+    music<
+</header>
+
+
+<main>
+
+<!-- HOME -->
+
+<section id="home">
+
+    <h2>Plan Your Perfect Event</h2>
+
+    <p>Make your special moments memorable with Eventify.</p>
+
+    <button onclick="showMessage()">Get Started</button>
+
+</section>
+
+
+<!-- WHY EVENTIFY -->
+
+<section id="why-us">
+
+    <h2>Why Choose Eventify?</h2>
+
+    <div class="features-container">
+
+        <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Easy Planning</h3>
+            <p>Plan and organize your events easily.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Budget Friendly</h3>
+            <p>Keep track of your event expenses.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h3>Stay Organized</h3>
+            <p>Manage important event tasks easily.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🎉</div>
+            <h3>Memorable Events</h3>
+            <p>Create unforgettable events with Eventify.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- POPULAR EVENTS -->
+
+<section id="events">
+
+    <h2>Popular Events</h2>
+
+    <input
+        type="text"
+        id="eventSearch"
+        placeholder="Search for an event..."
+        onkeyup="searchEvents()"
+    >
+
+    <!-- CATEGORY BUTTONS -->
+
+    <div class="category-buttons">
+
+        <button onclick="filterEvents('all')">
+            All
+        </button>
+
+        <button onclick="filterEvents('birthday')">
+            Birthday 🎂
+        </button>
+
+        <button onclick="filterEvents('wedding')">
+            Wedding 💍
+        </button>
+
+        <button onclick="filterEvents('concert')">
+            Concert 🎵
+        </button>
+
+        <button onclick="filterEvents('festival')">
+            Festival 🎊
+        </button>
+
+    </div>
+
+
+    <!-- EVENT CARDS -->
+
+    <div class="events-container">
+
+        <div class="event-card" data-category="birthday">
+
+            <h3>Birthday Party 🎂</h3>
+
+            <p>
+                Plan a fun and memorable birthday celebration.
+            </p>
+
+        </div>
+
+
+        <div class="event-card" data-category="wedding">
+
+            <h3>Wedding 💍</h3>
+
+            <p>
+                Organize your dream wedding with ease.
+            </p>
+
+        </div>
+
+
+        <div class="event-card" data-category="concert">
+
+            <h3>Concert 🎵</h3>
+
+            <p>
+                Create and manage exciting musical events.
+            </p>
+
+        </div>
+
+
+        <div class="event-card" data-category="festival">
+
+            <h3>Festival 🎊</h3>
+
+            <p>
+                Plan exciting festivals and celebrations.
+            </p>
+
+        </div>
+
+    </div>
+
+    <p id="noEvents">
+        No events found.
+    </p>
+
+</section>
+
+
+<!-- FEATURED EVENTS -->
+
+<section id="featured">
+
+    <h2>Featured Events</h2>
+
+    <div class="featured-container">
+
+        <div class="featured-card">
+
+            <h3>🎂 Grand Birthday Celebration</h3>
+
+            <p>
+                <strong>Date:</strong>
+                15 September 2026
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Karachi
+            </p>
+
+            <p>
+                Celebrate your special day with an unforgettable party.
+            </p>
+
+            <button onclick="showEventDetails('Grand Birthday Celebration')">
+                View Details
+            </button>
+
+        </div>
+
+
+        <div class="featured-card">
+
+            <h3>💍 Dream Wedding</h3>
+
+            <p>
+                <strong>Date:</strong>
+                20 October 2026
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Karachi
+            </p>
+
+            <p>
+                Plan a beautiful wedding filled with memorable moments.
+            </p>
+
+            <button onclick="showEventDetails('Dream Wedding')">
+                View Details
+            </button>
+
+        </div>
+
+
+        <div class="featured-card">
+
+            <h3>🎵 Music Night</h3>
+
+            <p>
+                <strong>Date:</strong>
+                10 November 2026
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                Karachi
+            </p>
+
+            <p>
+                Enjoy an exciting night filled with music and entertainment.
+            </p>
+
+            <button onclick="showEventDetails('Music Night')">
+                View Details
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EVENT PLANNER -->
+
+<section id="planner">
+
+    <h2>Plan Your Event</h2>
+
+    <form id="eventForm">
+
+        <input
+            type="text"
+            id="eventName"
+            placeholder="Event Name"
+            required
+        >
+
+        <input
+            type="date"
+            id="eventDate"
+            required
+        >
+
+        <input
+            type="text"
+            id="eventLocation"
+            placeholder="Event Location"
+            required
+        >
+
+        <input
+            type="number"
+            id="guests"
+            placeholder="Number of Guests"
+            min="1"
+            required
+        >
+
+        <button type="submit">
+            Create Event
+        </button>
+
+    </form>
+
+    <div id="eventResult"></div>
+
+</section>
+
+
+<!-- BUDGET -->
+
+<section id="budget">
+
+    <h2>Budget Calculator</h2>
+
+    <form id="budgetForm">
+
+        <input
+            type="number"
+            id="venue"
+            placeholder="Venue Cost"
+            min="0"
+            required
+        >
+
+        <input
+            type="number"
+            id="food"
+            placeholder="Food Cost"
+            min="0"
+            required
+        >
+
+        <input
+            type="number"
+            id="decoration"
+            placeholder="Decoration Cost"
+            min="0"
+            required
+        >
+
+        <input
+            type="number"
+            id="other"
+            placeholder="Other Expenses"
+            min="0"
+            required
+        >
+
+        <button type="submit">
+            Calculate Budget
+        </button>
+
+    </form>
+
+    <div id="budgetResult"></div>
+
+</section>
+
+
+<!-- CHECKLIST -->
+
+<section id="checklist">
+
+    <h2>Event Checklist</h2>
+
+    <div class="checklist-container">
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter a task"
+        >
+
+        <button onclick="addTask()">
+            Add Task
+        </button>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+    <h2>Event Gallery</h2>
+
+    <div class="gallery-container">
+
+        <div class="gallery-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed"
+                alt="Wedding Event"
+            >
+
+            <h3>Weddings 💍</h3>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d"
+                alt="Birthday Party"
+            >
+
+            <h3>Birthday Parties 🎂</h3>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a"
+                alt="Concert Event"
+            >
+
+            <h3>Concerts 🎵</h3>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30"
+                alt="Festival Event"
+            >
+
+            <h3>Festivals 🎊</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REGISTRATION -->
+
+<section id="registration">
+
+    <h2>Register for an Event</h2>
+
+    <form id="registrationForm">
+
+        <input
+            type="text"
+            id="regName"
+            placeholder="Your Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="regEmail"
+            placeholder="Your Email"
+            required
+        >
+
+        <select id="regEvent" required>
+
+            <option value="">
+                Select an Event
+            </option>
+
+            <option value="Birthday Party">
+                Birthday Party 🎂
+            </option>
+
+            <option value="Wedding">
+                Wedding 💍
+            </option>
+
+            <option value="Concert">
+                Concert 🎵
+            </option>
+
+            <option value="Festival">
+                Festival 🎊
+            </option>
+
+        </select>
+
+        <button type="submit">
+            Register Now
+        </button>
+
+    </form>
+
+    <div id="registrationResult"></div>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+
+<section id="countdown">
+
+    <h2>Next Event Countdown</h2>
+
+    <p>Our next big event is coming soon!</p>
+
+    <div id="timer">
+
+        <span>
+            <b id="days">0</b>
+            Days
+        </span>
+
+        <span>
+            <b id="hours">0</b>
+            Hours
+        </span>
+
+        <span>
+            <b id="minutes">0</b>
+            Minutes
+        </span>
+
+        <span>
+            <b id="seconds">0</b>
+            Seconds
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2>About Eventify</h2>
+
+    <p>
+        Eventify is an event-planning website created by
+        Hafsa Sajid and Aisha Israr to make event organization
+        simple, creative and convenient.
+    </p>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            id="userName"
+            placeholder="Your Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="userEmail"
+            placeholder="Your Email"
+            required
+        >
+
+        <textarea
+            id="userMessage"
+            placeholder="Write your message..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            Send Message
+        </button>
+
+    </form>
+
+    <p id="contactResult"></p>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Eventify | Hafsa Sajid & Aisha Israr
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
