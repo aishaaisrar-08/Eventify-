@@ -21,8 +21,8 @@ The project is designed to be responsive, so it can be accessed on desktops, tab
 
 ## 🛠️ Technologies Used
 
-* **HTML5** – Website structure
-* **CSS3** – Styling and responsive design
+* **HTML** – Website structure
+* **CSS** – Styling and responsive design
 * **JavaScript** – Interactive functionality
 
 ## 👩‍💻 Team Members
