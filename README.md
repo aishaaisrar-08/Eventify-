@@ -68,5 +68,6 @@ In the future, Eventify can be expanded with features such as:
 **Status:** Completed / Final Project
 
 Eventify is currently developed as a student final project and can be further improved with additional backend and database functionality.
-thank you
+
 ### 💡 Made with dedication by Aisha Israr & Hafsa Sajid
+thank you 
